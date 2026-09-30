@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kiran Academy — Job-Ready IT Courses in Pune</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f7fb;--surface:#fff;--ink:#12233f;--muted:#55627a;--line:#d9e0ec;--brand:#12233f;--brand-ink:#fff;--accent:#f2a900;--accent-ink:#231800;--teal:#0e7c7b;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1626;--surface:#15233a;--ink:#eef2f9;--muted:#a2afc5;--line:#27395a;--brand:#0a1220;--teal:#4fd1c5}}
+:root[data-theme="dark"]{--bg:#0d1626;--surface:#15233a;--ink:#eef2f9;--muted:#a2afc5;--line:#27395a;--brand:#0a1220;--teal:#4fd1c5}
+html{scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 "Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.12;margin:0 0 .5em;font-weight:800;letter-spacing:-.02em}
+h1{font-size:clamp(2.2rem,6vw,4rem)}
+h2{font-size:clamp(1.7rem,4vw,2.4rem)}
+h3{font-size:1.15rem;font-weight:600;letter-spacing:0}
+p{margin:0 0 1em}
+.muted{color:var(--muted)}
+section{padding:72px 0}
+
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--brand);color:var(--brand-ink)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-weight:800;font-size:1.25rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo b{display:grid;place-items:center;width:34px;height:34px;border-radius:8px;background:var(--accent);color:var(--accent-ink)}
+nav{display:flex;gap:22px;align-items:center}
+nav a{text-decoration:none;font-size:.95rem;opacity:.85}nav a:hover{opacity:1}
+.btn{display:inline-block;border:0;cursor:pointer;font:600 1rem/1 inherit;font-family:inherit;padding:14px 22px;border-radius:10px;background:var(--accent);color:var(--accent-ink);text-decoration:none}
+.btn:hover{filter:brightness(1.07)}
+.btn.ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
+.icon-btn{background:none;border:1.5px solid rgba(255,255,255,.4);color:inherit;border-radius:8px;width:38px;height:38px;cursor:pointer;font-size:1rem}
+#menu{display:none}
+@media (max-width:780px){
+ #menu{display:block}
+ nav{display:none;position:absolute;left:0;right:0;top:64px;background:var(--brand);flex-direction:column;padding:16px 20px 24px;align-items:flex-start}
+ nav.open{display:flex}
+}
+
+/* hero */
+.hero{background:var(--brand);color:var(--brand-ink);padding:64px 0 88px}
+.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero p.lead{font-size:1.15rem;max-width:34em;opacity:.88}
+.type{color:var(--accent);white-space:nowrap}
+.type::after{content:"";display:inline-block;width:.08em;height:.9em;background:var(--accent);margin-left:4px;vertical-align:-.08em;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.card{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:26px}
+.hero .card{box-shadow:0 20px 50px rgba(0,0,0,.35)}
+label{display:block;font-weight:600;font-size:.9rem;margin:14px 0 6px}
+input,select{width:100%;padding:12px 14px;font:inherit;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.err{color:#d64545;font-size:.85rem;min-height:1.2em;margin:4px 0 0}
+.ok{background:rgba(14,124,123,.14);color:var(--teal);padding:14px;border-radius:8px;font-weight:600}
+@media (max-width:860px){.hero .grid{grid-template-columns:1fr}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-44px;position:relative}
+.stat{text-align:center;padding:22px 10px}
+.stat strong{display:block;font-size:2rem;font-weight:800;color:var(--teal)}
+@media (max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* courses */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 28px}
+.tab{font:600 .95rem inherit;font-family:inherit;padding:10px 18px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.courses{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.course{display:flex;flex-direction:column}
+.course .meta{display:flex;justify-content:space-between;gap:8px;color:var(--muted);font-size:.9rem;margin-bottom:10px}
+.course .pay{color:var(--teal);font-weight:800}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:auto 0 18px;padding-top:6px}
+.chips span{font-size:.8rem;padding:4px 10px;border-radius:6px;background:var(--bg);border:1px solid var(--line)}
+.course .btn{align-self:flex-start;padding:11px 18px}
+
+/* journey */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s;padding:0;list-style:none}
+.steps li{counter-increment:s;padding:24px;border-left:4px solid var(--accent);background:var(--surface);border-radius:0 12px 12px 0}
+.steps li::before{content:"Step " counter(s);display:block;font-weight:600;color:var(--teal);font-size:.9rem;margin-bottom:6px}
+@media (max-width:820px){.steps{grid-template-columns:1fr}}
+
+/* branches */
+.branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.branches a.tel{color:var(--teal);font-weight:600}
+
+/* faq */
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";font-size:1.3rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:12px 0 0;color:var(--muted)}
+
+footer{background:var(--brand);color:var(--brand-ink);padding:40px 0;font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:#25a244;color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.3);z-index:9}
+@media (prefers-reduced-motion:reduce){.type::after{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="logo" href="#top"><b>K</b>Kiran Academy</a>
+  <nav id="nav" aria-label="Main">
+   <a href="#courses">Courses</a><a href="#journey">How it works</a><a href="#branches">Branches</a><a href="#faq">FAQ</a>
+   <a class="btn" href="#demo">Free demo</a>
+  </nav>
+  <div style="display:flex;gap:8px">
+   <button class="icon-btn" id="theme" aria-label="Toggle dark mode">◐</button>
+   <button class="icon-btn" id="menu" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+ </div>
+</header>
+
+<main id="top">
+<div class="hero">
+ <div class="wrap grid">
+  <div>
+   <h1>Learn <span class="type" id="typed"></span><br>Get hired in Pune.</h1>
+   <p class="lead">Live classes with working industry trainers, real projects for your portfolio, and placement support until you have an offer letter.</p>
+   <div class="cta">
+    <a class="btn" href="#demo">Book a free demo class</a>
+    <a class="btn ghost" href="#courses">Browse courses</a>
+   </div>
+  </div>
+  <div class="card" id="demo">
+   <h3>Book a free demo class</h3>
+   <p class="muted" style="font-size:.92rem;margin:0">No fees. We call you back within 30 minutes.</p>
+   <div id="formBox">
+    <label for="name">Full name</label><input id="name" autocomplete="name">
+    <div class="err" id="e-name"></div>
+    <label for="phone">Mobile number</label><input id="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit number">
+    <div class="err" id="e-phone"></div>
+    <label for="course">Course</label>
+    <select id="course"><option>Java Full Stack</option><option>Python Full Stack</option><option>Software Testing</option><option>Data Science &amp; ML</option><option>Data Analytics</option><option>MERN Full Stack</option><option>Not sure yet</option></select>
+    <label for="mode">Learning mode</label>
+    <select id="mode"><option>Classroom</option><option>Live online</option><option>Hybrid</option></select>
+    <button class="btn" id="submit" style="width:100%;margin-top:18px">Get my free demo</button>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="wrap">
+ <div class="stats" id="stats">
+  <div class="card stat"><strong data-n="25000" data-s="+">0</strong>Students trained</div>
+  <div class="card stat"><strong data-n="1750" data-s="+">0</strong>Hiring partners</div>
+  <div class="card stat"><strong data-n="96" data-s="%">0</strong>Placement rate</div>
+  <div class="card stat"><strong data-n="14" data-s="+">0</strong>Years in Pune</div>
+ </div>
+</div>
+
+<section id="courses">
+ <div class="wrap">
+  <h2>Pick the course that gets you hired</h2>
+  <p class="muted">Each course is built around a real job role. You finish with projects, not just a certificate.</p>
+  <div class="tabs" role="group" aria-label="Filter courses">
+   <button class="tab" data-f="all" aria-pressed="true">All</button>
+   <button class="tab" data-f="dev" aria-pressed="false">Development</button>
+   <button class="tab" data-f="qa" aria-pressed="false">Testing</button>
+   <button class="tab" data-f="data" aria-pressed="false">Data</button>
+  </div>
+  <div class="courses" id="courseList"></div>
+ </div>
+</section>
+
+<section id="journey" style="background:var(--surface)">
+ <div class="wrap">
+  <h2>From first class to offer letter</h2>
+  <ol class="steps">
+   <li><h3>Learn from working engineers</h3>Live classes with real tools and real code from day one.</li>
+   <li><h3>Build 3+ real projects</h3>Deploy applications and keep a GitHub portfolio interviewers can open.</li>
+   <li><h3>Practise interviews</h3>Mock interviews and resume reviews, technical and HR.</li>
+   <li><h3>Get referred to companies</h3>Our placement team connects you to hiring partners directly.</li>
+   <li><h3>Prepare for each interview</h3>Company briefing, likely questions and salary guidance.</li>
+   <li><h3>Join and keep growing</h3>Offer support, onboarding help and access to the alumni network.</li>
+  </ol>
+ </div>
+</section>
+
+<section id="branches">
+ <div class="wrap">
+  <h2>4 branches plus live online</h2>
+  <div class="branches">
+   <div class="card"><h3>Karvenagar, Pune</h3><p class="muted">Park Plaza, above Birla Super Market, State Bank Nagar</p><a class="tel" href="tel:+918888809416">+91 88888 09416</a></div>
+   <div class="card"><h3>Hadapsar, Pune</h3><p class="muted">Pune–Solapur Rd, above Maharashtra Electronics</p><a class="tel" href="tel:+919673107070">+91 96731 07070</a></div>
+   <div class="card"><h3>Chinchwad, Pune</h3><p class="muted">Office 31B, Chinchwad Station Rd</p><a class="tel" href="tel:+918857055009">+91 88570 55009</a></div>
+   <div class="card"><h3>Nagpur</h3><p class="muted">190/A, Mankapur Ring Rd, near Chatrapati Hall</p><a class="tel" href="tel:+919529204783">+91 95292 04783</a></div>
+   <div class="card"><h3>Live online</h3><p class="muted">Same trainer, same syllabus, from anywhere in India.</p><a class="tel" href="#demo">Book an online demo</a></div>
+  </div>
+ </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+ <div class="wrap" style="max-width:780px">
+  <h2>Common questions</h2>
+  <details><summary>Do I need coding knowledge to join?</summary><p>No. Beginner batches start from the basics, and students from non-IT backgrounds join regularly.</p></details>
+  <details><summary>Are classes online or in a classroom?</summary><p>Both. Choose classroom at a branch, live online, or a hybrid of the two.</p></details>
+  <details><summary>How long are the courses?</summary><p>Software Testing and Data Analytics run about 4 months, MERN about 5 months, and Java, Python and Data Science about 6 months.</p></details>
+  <details><summary>How do I get fees and batch dates?</summary><p>Book a free demo class above. The team will share current fees and upcoming batches on the call.</p></details>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div><strong>Kiran Academy</strong><br>Job-ready IT training in Pune and Nagpur.</div>
+  <div>Demo page inspired by <a href="https://thekiranacademy.com/" target="_blank" rel="noopener">thekiranacademy.com</a><br>Salary ranges are indicative and vary by candidate.</div>
+ </div>
+</footer>
+<a class="wa" href="https://wa.me/918888809416?text=Hi%2C%20I%20want%20to%20know%20more%20about%20courses" target="_blank" rel="noopener">WhatsApp us</a>
+
+<script>
+const courses=[
+ {t:"Java Full Stack",g:"dev",d:"Core Java, Spring Boot, Hibernate, REST APIs, MySQL and deployable projects.",m:"6 months",p:"3.5–8 LPA",c:["Java","Spring Boot","Hibernate","MySQL"]},
+ {t:"Python Full Stack",g:"dev",d:"Python, Django/Flask, databases, REST APIs and front-end skills with capstone projects.",m:"6 months",p:"3.5–7 LPA",c:["Python","Django","Flask","MySQL"]},
+ {t:"MERN Full Stack",g:"dev",d:"React, Node.js, Express and MongoDB, with real deployment.",m:"5 months",p:"3.5–7.5 LPA",c:["React","Node.js","Express","MongoDB"]},
+ {t:"Software Testing",g:"qa",d:"Manual testing, Selenium automation, TestNG, Jira and API testing.",m:"4 months",p:"3–6 LPA",c:["Selenium","TestNG","Jira","Postman"]},
+ {t:"Data Science & ML",g:"data",d:"Python, statistics, machine learning, model building and visualization.",m:"6 months",p:"4–9 LPA",c:["Pandas","NumPy","Scikit-learn"]},
+ {t:"Data Analytics",g:"data",d:"Turn raw data into decisions with Excel, SQL, Python and Power BI.",m:"4 months",p:"3–6.5 LPA",c:["Excel","SQL","Power BI","Tableau"]}
+];
+const list=document.getElementById('courseList');
+function render(f){
+ list.innerHTML=courses.filter(c=>f==='all'||c.g===f).map(c=>`<article class="card course"><div class="meta"><span>${c.m}</span><span class="pay">${c.p}</span></div><h3>${c.t}</h3><p class="muted">${c.d}</p><div class="chips">${c.c.map(x=>`<span>${x}</span>`).join('')}</div><a class="btn" href="#demo" data-pick="${c.t}">Enquire now</a></article>`).join('');
+}
+render('all');
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-pressed',x===b));
+ render(b.dataset.f);
+});
+list.addEventListener('click',e=>{
+ const p=e.target.closest('[data-pick]');
+ if(!p)return;
+ const s=document.getElementById('course');
+ [...s.options].forEach(o=>{if(p.dataset.pick.startsWith(o.text.split(' ')[0]))s.value=o.text});
+});
+
+// typing effect
+const words=["Java","Python","Testing","Data Science","MERN"];
+const typed=document.getElementById('typed');
+if(matchMedia('(prefers-reduced-motion:reduce)').matches){typed.textContent="IT skills"}
+else{let w=0,i=0,del=false;(function tick(){
+ const cur=words[w];typed.textContent=cur.slice(0,i);
+ if(!del&&i===cur.length){del=true;return setTimeout(tick,1400)}
+ if(del&&i===0){del=false;w=(w+1)%words.length}
+ i+=del?-1:1;setTimeout(tick,del?50:90);
+})()}
+
+// counters
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+ if(!e.isIntersecting)return;io.unobserve(e.target);
+ e.target.querySelectorAll('strong').forEach(s=>{
+  const n=+s.dataset.n,t0=performance.now();
+  (function f(t){const k=Math.min((t-t0)/1200,1);s.textContent=Math.round(n*k).toLocaleString('en-IN')+(k===1?s.dataset.s:'');if(k<1)requestAnimationFrame(f)})(t0);
+ });
+}),{threshold:.4});
+io.observe(document.getElementById('stats'));
+
+// form validation
+document.getElementById('submit').onclick=()=>{
+ const n=document.getElementById('name').value.trim(),p=document.getElementById('phone').value.replace(/\s|-/g,'');
+ const en=document.getElementById('e-name'),ep=document.getElementById('e-phone');
+ en.textContent=n.length<2?'Enter your full name.':'';
+ ep.textContent=/^(\+91)?[6-9]\d{9}$/.test(p)?'':'Enter a valid 10-digit Indian mobile number.';
+ if(en.textContent||ep.textContent)return;
+ document.getElementById('formBox').innerHTML=`<p class="ok" role="status">Thanks ${n.split(' ')[0]}! We will call you within 30 minutes to confirm your demo class.</p>`;
+};
+
+// menu + theme
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+menu.onclick=()=>menu.setAttribute('aria-expanded',nav.classList.toggle('open'));
+nav.onclick=e=>{if(e.target.tagName==='A'){nav.classList.remove('open');menu.setAttribute('aria-expanded',false)}};
+document.getElementById('theme').onclick=()=>{
+ const r=document.documentElement,dark=r.dataset.theme?r.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+ r.dataset.theme=dark?'light':'dark';
+ try{localStorage.setItem('ka-theme',r.dataset.theme)}catch(e){}
+};
+try{const t=localStorage.getItem('ka-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}
+</script>
+</body>
+</html>
